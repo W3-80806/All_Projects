@@ -1,0 +1,7 @@
+{
+    "server": "localhost",
+    "database": "Project1",
+    "user": "root",
+    "password": "manager",
+    "port": 9897
+}

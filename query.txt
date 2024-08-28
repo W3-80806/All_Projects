@@ -1,0 +1,30 @@
+http://172.18.7.87:4200
+
+DBMS Repository : https://github.com/sunbeam-dmc-sep2023/dsa.git
+Username: sunbeam-dmc-sep2023
+Password: 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
+
+BloodBank repostory: https://github.com/BloodBankManagementProject/BloodBank.git
+Username:W3-80806
+Token:   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
+
+
+git remote add origin https://github.com/BloodBankManagementProject/BloodBank.git
+git branch -M main
+git push -u origin main
+
+
+Minal Advance_Java git repostory: https://github.com/W3-80806/Advance_Java.git
+
+minal git Token:   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
+
+
+Mansi advancejava repostory:  https://github.com/W3-80805/advancejava.git
+Mansi token:   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
+
+
+Hybrid Program Link:  https://bonaventuresystems.com/dmc/
+
+c c d b c a d a a b b a d b c c d d c b
+
+

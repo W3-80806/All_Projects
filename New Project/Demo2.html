@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title> Users Details</title>
+    </head>
+    <body>
+        <center>
+            <input type="button"
+                   value="Get Users"
+                   onclick="GetUsers()"/>
+            <hr/>
+            <table border="1" style="width: 800px; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Avatar</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody"></tbody>
+            </table>
+        </center>
+        <script>
+            function GetUsers()
+            {
+                var helper=new XMLHttpRequest();
+                helper.onreadystatechange = ()=>{
+                    if(helper.readyState == 4 && helper.status == 200)
+                {
+                    var userdataInString=helper.responseText;
+                    var alldataInJSON=JSON.parse(userdataInString);
+                    var users=alldataInJSON.data;
+                    var refToTablebody=document.getElementById("tablebody");
+                    refToTablebody.innerHTML="";
+                    for(i=0;i<users.length;i++)
+                {
+                    var user=users[i];
+                    var row=`<tr>
+                        <td> ${user.id}</td>
+                        <td> ${user.first_name}</td>
+                        <td> ${user.last_name}</td>
+                        <td> ${user.email}</td>
+                        <td> 
+                            <img 
+                            src="${user.avatar}" 
+                            style=" height :100px; width:100px;"/>
+                        </td>
+                        </tr>`
+                        refToTablebody.innerHTML=refToTablebody.innerHTML+row;
+                }
+                }
+                };
+                helper.open("GET","https://reqres.in/api/users");
+                helper.send();
+            }
+        </script>
+    </body>
+</html>

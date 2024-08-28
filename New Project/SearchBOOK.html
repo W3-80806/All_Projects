@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search Book API</title>
+    </head>
+    <body>
+        <center>
+            Search Book:<input type="text" id="txtbook">
+            <input type="button" value="Search" onclick="Book()">
+            <div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Authars</th>
+                            <th>Publisher</th>
+                            <th>Publisher Date</th>
+                            <th>Cover Photo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablebody"></tbody>
+                </table>
+            </div>
+        </center>
+
+        <script>
+            function Book()
+            {
+                var TextBook=document.getElementById("txtbook");
+                var Book=TextBook.value;
+                
+                var helper=new XMLHttpRequest();
+                helper.onreadystatechange = () => {
+                    if(helper.readyState == 4 && helper.status == 200)
+                {
+                    var dataInStringFormat=helper.responseText;
+                    var data=JSON.parse(dataInStringFormat);
+                    var Books=data.items;
+                    var TableBody=document.getElementById("tablebody");
+                    TableBody.innerHTML="";
+
+                    for(i=0;i<Books.length;i++)
+                {
+                    var book=Books[i];
+                    var row=`
+                    <tr>
+                        <td> ${book.volumeInfo.title}</td>
+                        <td> ${book.volumeInfo.authers}</td>
+                        <td> ${book.volumeInfo.publisher}</td>
+                        <td> ${book.volumeInfo.publisherDate}</td>
+                        <td>
+                            <img
+                            src="${book.volumeInfo.imageLinks.thumbnail}"
+                            style="height:100px; width:100px"/>
+                        </td>
+                    </tr>
+                    `
+                    TableBody.innerHTML= TableBody.innerHTML+row;
+
+                }
+                }
+                };
+                helper.open("GET","https://www.googleapis.com/books/v1/volumes?q="+ Book);
+                helper.send();
+            }
+        </script>
+    </body>
+</html>

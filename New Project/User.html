@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> Users Details</title>
+    </head>
+    <body>
+        <center>
+            <input type="button"
+                   value="Get Users"
+                   onclick="GetUsers()"/>
+            <hr/>
+            <table border="1" style="width: 800px; text-align: center;">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody id="tablebody"></tbody>
+            </table>
+        </center>
+        <script>
+            function GetUsers()
+            {
+                var helper=new XMLHttpRequest();
+                helper.onreadystatechange = ()=>{
+                    if(helper.readyState == 4 && helper.status == 200)
+                {
+                    var userdataInString=helper.responseText;
+                    var alldataInJSON=JSON.parse(userdataInString);
+                    var users=alldataInJSON.data;
+                    var refToTablebody=document.getElementById("tablebody");
+                    refToTablebody.innerHTML="";
+                    for(i=0;i<users.length;i++)
+                {
+                    var user=users[i];
+                    var row=`<tr>
+                        <td> ${user.No}</td>
+                        <td> ${user.Name}</td>
+                        <td> ${user.Address}</td>
+                        </tr>`
+                        refToTablebody.innerHTML=refToTablebody.innerHTML+row;
+                }
+                }
+                };
+                helper.open("GET","http://localhost:9897/users");
+                helper.send();
+            }
+        </script>
+    </body>
+</html>

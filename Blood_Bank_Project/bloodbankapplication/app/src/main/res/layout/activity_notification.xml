@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
+    android:orientation="vertical"
+xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Notification"
+    android:stretchColumns="1,2,3,4"
+    android:layout_margin="10dp"
+    android:padding="10dp" >
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="681dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="Notification Page"
+                android:textColor="@color/white" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".Notification">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="108dp"
+                        android:layout_column="1"
+                        android:padding="15dp"
+                        android:text="Registration Date"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        android:layout_gravity="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="93dp"
+                        android:layout_column="1"
+                        android:padding="15dp"
+                        android:text="Hospital Name"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="86dp"
+                        android:layout_column="1"
+                        android:padding="15dp"
+                        android:text=" Doner Name"
+                        android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="77dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="1"
+                        android:padding="15dp"
+                        android:layout_gravity="center"
+                        android:text=" Status"
+                        android:textColor="@color/white"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycler_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</TableLayout>

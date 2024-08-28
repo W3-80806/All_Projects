@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">bloodbankapplication</string>
+    <string-array name="array_hospital">
+    <item>Select Your Hospital</item>
+    <item>Ruby Hall Clinic</item>
+        <item>MJM HOSPITAL</item>
+        <item>Jehangir Hospital</item>
+        <item>DPU Hospital </item>
+        <item>Sanjeevani</item>
+
+    </string-array>
+</resources>

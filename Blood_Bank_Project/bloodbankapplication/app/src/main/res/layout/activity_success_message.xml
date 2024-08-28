@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menu_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="329dp"
+            android:layout_height="576dp"
+            android:layout_marginLeft="30dp"
+
+            android:background="@drawable/bottom_background"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="286dp"
+                android:layout_height="276dp"
+                android:layout_margin="32dp"
+                android:background="@drawable/bottom_background">
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="279dp"
+                    android:layout_height="273dp"
+
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/check_mark"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="317dp"
+                android:layout_height="72dp"
+
+                android:layout_gravity="center"
+                android:gravity="top"
+
+                android:text="You Have Done Registration Successfully To See Status  "
+                android:textColor="#9C204A"
+
+                android:textSize="25dp" />
+
+            <Button
+                android:id="@+id/button"
+                android:onClick="ClickHere"
+                android:layout_width="228dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:text="Click  Here" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
